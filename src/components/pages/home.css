@@ -1,0 +1,55 @@
+.headerPage{
+ 
+  display: flex;
+  flex-direction: row;
+  background-color: #3F99C6;
+  width: 80vw;
+  height: 20vh;
+
+}
+
+.headerPage input{
+  height: 40px;
+  border-radius: 50px;
+  background-color: white;
+  outline: none;
+  width: 100%;
+}
+
+.form{
+  display: flex;
+  flex-direction: row;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+ 
+}
+
+
+.headerPage .form button{
+  height: 35px;
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 30%;
+  margin-top: 4px;
+  border: transparent;
+  background:#FFFFFF;
+  color: #7C7C7C;
+}
+
+.card{
+  box-shadow: 1px 1px 1px;
+  position: absolute;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  width: 60%;
+  height: 60vh;
+  box-shadow: 6px 2px 24px 1px;
+  bottom: 0;
+  top: 34vh;
+  background: white;
+  border-radius: 10px;
+
+}
