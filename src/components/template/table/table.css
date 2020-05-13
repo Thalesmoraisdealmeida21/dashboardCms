@@ -1,0 +1,57 @@
+
+
+.table{
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  color: rgb(83, 83, 83);
+  font-weight: 500;
+  border-collapse: collapse;
+  padding: 10px;
+ 
+}
+
+
+.table td{
+  padding: 10px;
+}
+
+.table th{
+    padding: 10px;  
+}
+
+.table tr{
+  width: 100%;
+  padding: 10px;
+  transition: 0.5s;
+  border-bottom: rgb(206, 205, 205) 1px solid;
+
+}
+
+
+.table tbody tr:hover {
+  background: silver;
+  padding: 0;
+ 
+}
+
+
+.table tbody  tr:active {
+  background: rgb(145, 145, 145);
+  padding: 0;
+}
+
+.table th{
+  height: 40px;
+  color: rgb(75, 75, 75);
+
+}
+
+
+.table td{
+  height: 60px;
+  
+  
+}
+
+

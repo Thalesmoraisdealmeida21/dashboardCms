@@ -37,10 +37,32 @@
   border: transparent;
   background:#FFFFFF;
   color: #7C7C7C;
+  transition: 0.7s;
+ 
+}
+
+.headerPage .form button:hover{
+  box-shadow: -2px 0px 20px 7px;
+ 
+}
+
+.btn-custom{
+  background: #3F99C6;
+  border: transparent;
+  border-radius: 5px;
+  height: 30px;
+  margin: 10px;
+  transition: 1s;
+  color: white
+}
+
+.btn-custom:hover{
+    box-shadow: 1px 1px 1px;
 }
 
 .card{
   box-shadow: 1px 1px 1px;
+  overflow: scroll;
   position: absolute;
   margin-left: 10vw;
   margin-right: 10vw;
@@ -51,5 +73,6 @@
   top: 34vh;
   background: white;
   border-radius: 10px;
+
 
 }
