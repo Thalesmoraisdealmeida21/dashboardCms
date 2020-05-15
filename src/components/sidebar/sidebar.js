@@ -4,16 +4,41 @@ import {MdDashboard, MdAddShoppingCart, MdSchool, MdEmail, MdChat, MdNoteAdd, Md
 
 
 import './sidebar.css'
+import { useState } from 'react'
 
 export default function(){
 
+  const [menuCollpse, setMenuCollpase] = useState("sidebarContainer")
+  const [sizeIcons, setSizeIcons] = useState(30)
+  function collapseMenu(){
+    if(menuCollpse === "sidebarContainer menuCollapsed"){
+      setMenuCollpase("sidebarContainer");
+      setSizeIcons(30)
+    } else {
+      setMenuCollpase("sidebarContainer menuCollapsed");
+      setSizeIcons(40)
+    }
+     
 
+
+  }
   return(
     
     
-      <div className="sidebarContainer"> 
-  
+      <div className={menuCollpse}> 
 
+        <div className="headerMenu">
+            <h4>CMS</h4>
+
+            <button onClick={collapseMenu} className="btn-toggle">
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+  
+        </button>
+        </div>
+
+     
     
         <div className="profileContainer">
           <div className="profileContent">
@@ -36,77 +61,21 @@ export default function(){
                     <li>
                      
                        <a href="" className="linkMenu">
-                       
-                         <MdDashboard size={20} ></MdDashboard> 
+
+
+                          <div className="icon">
+                            <MdDashboard size={sizeIcons} style={{transition: "1s"}}></MdDashboard> 
+                          </div>
+                     
                       
                       
                         <label htmlFor="">Dashboard</label>
 
                 
-                            <MdKeyboardArrowRight className="iconDropdown" size={20}></MdKeyboardArrowRight>
                
-               
-                        
+    
                       </a>
-                    </li>
-
-                      <li>
-                     
-                       <a href="#" className="linkMenu">
-                         <MdNoteAdd size={20} ></MdNoteAdd> 
-                        <label htmlFor="">Públicações</label>
-
-                      </a>
-                    </li>
-
-                    <li>
-                     
-                     <a href="#" className="linkMenu">
-                       <MdAddShoppingCart size={20} ></MdAddShoppingCart> 
-                      <label htmlFor="">E-commerce</label>
-
-                    </a>
-                  </li>
-
-
-                  <li>
-                     
-                     <a href="#" className="linkMenu">
-                       <MdAccessibility size={20} ></MdAccessibility> 
-                      <label htmlFor="">Acessibilidade</label>
-
-                    </a>
-                  </li>
-
-
-                  <li>
-                     
-                     <a href="#" className="linkMenu">
-                       <MdSchool size={20} ></MdSchool> 
-                      <label htmlFor="">Faculdade</label>
-
-                    </a>
-                  </li>
-
-
-
-                  <li>
-                     
-                     <a href="#" className="linkMenu">
-                       <MdEmail size={20} ></MdEmail> 
-                      <label htmlFor="">E-mail</label>
-
-                    </a>
-                  </li>
-
-                  <li>
-                     
-                     <a href="#" className="linkMenu">
-                       <MdChat size={20} ></MdChat> 
-                      <label htmlFor="">Chat</label>
-
-                    </a>
-                  </li>
+                 </li>
 
                  
 

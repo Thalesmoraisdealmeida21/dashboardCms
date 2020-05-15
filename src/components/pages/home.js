@@ -1,6 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import Table from './../template/table/table'
+import {FaRegStickyNote} from 'react-icons/fa'
 import api from './../../services/api'
+
+
+import {useHistory} from 'react-router-dom'
 
 
 import './home.css'
@@ -9,8 +13,11 @@ import './home.css'
 export default function(){
 
   const [posts, setPosts] = useState([]);
+  const history = useHistory();
 
-
+  function toNewPost(){
+    history.push("/post/new")
+  }
 
 
 useEffect(()=>{
@@ -27,10 +34,14 @@ useEffect(()=>{
 
       <div className="headerPage">
             
+            <div className="titlePage">
+              <FaRegStickyNote enableBackground={false}></FaRegStickyNote>
+              <span>Públicações</span>
+            </div>
 
             <div className="form">
               <input type="text"/>
-              <button>Nova Públicação</button>
+              <button onClick={toNewPost}>Nova Públicação</button>
             </div>
 
         
