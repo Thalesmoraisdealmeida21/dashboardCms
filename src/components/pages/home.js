@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Table from './../template/table/table'
+import HeaderPage from './../template/headerPage/headerPage'
 import {FaRegStickyNote} from 'react-icons/fa'
 import api from './../../services/api'
 
@@ -27,12 +28,10 @@ useEffect(()=>{
        setPosts(res.data);
     })
 }, [])
-
-
-  return(
-    <div className="">
-
-      <div className="headerPage">
+/**
+ * 
+ * 
+ *   <div className="headerPage">
             
             <div className="titlePage">
               <FaRegStickyNote enableBackground={false}></FaRegStickyNote>
@@ -49,6 +48,20 @@ useEffect(()=>{
 
       </div>
 
+ */
+
+  return(
+    <div className="">
+          <HeaderPage pageName={'Públicações'} contentHeader={()=>{
+            return(
+              <div className="form">
+              <input type="text"/>
+              <button onClick={toNewPost}>Nova Públicação</button>
+            </div>
+
+            )
+          }}></HeaderPage>
+    
 
         <div className="card">
           <Table headerTable={['ID','Titulo', 'Opções']} data={()=>{

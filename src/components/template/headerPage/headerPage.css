@@ -1,0 +1,55 @@
+.headerPage{
+ 
+  display: flex;
+  flex-direction: row;
+  background-color: #3F99C6;
+
+  height: 20vh;
+
+}
+
+.headerPage input{
+  height: 40px;
+  border-radius: 50px;
+  background-color: white;
+  outline: none;
+  width: 100%;
+  font-size: 24px;
+  padding: 10px;
+}
+
+
+.titlePage{
+  color: white;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: row;
+  font-weight: 400;
+  font-family: Muli;
+  margin: auto;
+  margin-left: 80px;
+}
+
+
+.titlePage span{
+    margin-left: 20px;
+}
+
+.headerPage .form button{
+  height: 55px;
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 30%;
+  margin-top: 4px;
+  border: transparent;
+  background:#FFFFFF;
+  color: #7C7C7C;
+  transition: 0.7s;
+ 
+}
+
+
+.headerPage .form button:hover{
+  box-shadow: -2px 0px 20px 7px;
+ 
+}

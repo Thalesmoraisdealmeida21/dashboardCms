@@ -4,6 +4,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Loader from './assets/loader.svg'
 
 function loadingScreen(){
+
   return(
 
     <div className="loader" style={{textAlign: "center", marginTop:"auto"}}>
