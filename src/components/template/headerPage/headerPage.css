@@ -1,3 +1,15 @@
+.btn{
+  height: 34px;
+  border-radius: 5px;
+  margin-top: 7vh;
+  margin-right: 10vw;
+  width: 133px;
+  background: white;
+  border: transparent;
+  color: #707070;
+  font-weight: bold;
+}
+
 .headerPage{
  
   display: flex;
@@ -18,6 +30,67 @@
   padding: 10px;
 }
 
+.form{
+  display: flex;
+  flex-direction: row;
+  margin-left: 5vw;
+  margin-right: 15vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+ 
+}
+
+
+.headerPage .form button{
+  height: 55px;
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 30%;
+  margin-top: 4px;
+  border: transparent;
+  background:#FFFFFF;
+  color: #7C7C7C;
+  transition: 0.7s;
+ 
+}
+
+.headerPage .form button:hover{
+  box-shadow: -2px 0px 20px 7px;
+ 
+}
+
+.btn-custom{
+  background: #3F99C6;
+  border: transparent;
+  border-radius: 5px;
+  height: 30px;
+  margin: 10px;
+  transition: 1s;
+  color: white
+}
+
+.btn-custom:hover{
+    box-shadow: 1px 1px 1px;
+}
+
+.card{
+  box-shadow: 1px 1px 1px;
+  overflow: scroll;
+  position: absolute;
+  
+  width: 60%;
+  margin: auto;
+  margin-left: 10%;
+  height: 60vh;
+  box-shadow: 6px 2px 24px 1px;
+  bottom: 0;
+  top: 13vh;
+  background: white;
+  border-radius: 10px;
+
+
+}
 
 .titlePage{
   color: white;
@@ -33,23 +106,4 @@
 
 .titlePage span{
     margin-left: 20px;
-}
-
-.headerPage .form button{
-  height: 55px;
-  border-radius: 10px;
-  margin-left: 10px;
-  width: 30%;
-  margin-top: 4px;
-  border: transparent;
-  background:#FFFFFF;
-  color: #7C7C7C;
-  transition: 0.7s;
- 
-}
-
-
-.headerPage .form button:hover{
-  box-shadow: -2px 0px 20px 7px;
- 
 }

@@ -8,3 +8,8 @@
   display: flex;
   flex-direction: column;
 }
+
+.auth{
+  display: flex;
+  flex-direction: row;
+}

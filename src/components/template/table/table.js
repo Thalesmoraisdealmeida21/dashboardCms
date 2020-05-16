@@ -11,7 +11,7 @@ export default function(props){
   const HeaderTable = props.headerTable
   const data = props.data
 
-  console.log(data)
+
  
   return(
     <div className="tableContainer">

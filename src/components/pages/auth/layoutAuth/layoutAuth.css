@@ -1,0 +1,97 @@
+.containerAuth{
+  display: flex;
+  flex-direction: row;
+  width: 78%;
+}
+.welcomeMessages{
+  margin-left: 5vw;
+  margin-top: 30vh;
+}
+
+.formContainer{
+  margin: auto;
+}
+
+.welcomeMessages h1{
+  font-size: 64px;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+.welcomeMessages p{
+  font-size: 24px;
+  margin: 2px;
+  width: 70%;
+  margin-top: 0;
+}
+.containerDefault{
+      background: #101E2B;
+      background-size: cover;
+      height: 100vh;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      box-shadow: -16px 2px 20px 20px;
+      color: white;
+
+}
+
+
+
+.welcomeContent{
+  margin-left: 10%;
+  margin-top: auto;
+  color: white;
+}
+
+
+.loginForm{
+  color: black;
+  margin-top: auto;
+  margin: auto;
+  text-align: center;
+  font-size: 24px;
+}
+
+
+.formGroup{
+  padding: 1px;
+  width: 15vw;
+ 
+}
+
+.formGroup .formControl{
+  height: 7vh;
+  width: 100%;
+  border-radius: 1px;
+  box-sizing: border-box;
+  background: white;
+  outline: transparent;
+  padding: 10px;
+  box-shadow: 1px 2px 5px;
+  margin: 5px;
+  box-shadow: 0 0 0 0;
+  border: 1px solid #e8e8e8;
+  outline: 0;
+}
+
+
+.formControl:focus{
+  background: transparent;
+}
+
+.buttons {
+  margin-top: 5vh;
+  margin: 5px
+}
+.buttons .btn{
+  height: 40px;
+  width: 100%;
+  background: #101E2B;
+  color: white;
+  margin: 5px;
+  outline: transparent;
+  border: transparent;
+}

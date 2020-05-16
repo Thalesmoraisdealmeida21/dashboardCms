@@ -23,7 +23,7 @@ export default function(){
 
 useEffect(()=>{
   
-    api.get("posts/1").then((res)=>{
+    api.get("posts").then((res)=>{
     
        setPosts(res.data);
     })
@@ -52,7 +52,7 @@ useEffect(()=>{
 
   return(
     <div className="">
-          <HeaderPage pageName={'Públicações'} contentHeader={()=>{
+          <HeaderPage pageName={'Públicações'} icon={()=>{ return(<FaRegStickyNote enableBackground={false}></FaRegStickyNote>)}}contentHeader={()=>{
             return(
               <div className="form">
               <input type="text"/>
