@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState }  from 'react'
 import profileImage from './../../assets/perfil.jpg'
 import {MdDashboard, MdAddShoppingCart, MdSchool, MdEmail, MdChat, MdNoteAdd, MdAccessibility, MdArrowDropDownCircle, MdKeyboardArrowLeft, MdKeyboardArrowRight} from 'react-icons/md'
 
 
 import './sidebar.css'
-import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function(){
 
@@ -60,7 +60,7 @@ export default function(){
                   <ul>
                     <li>
                      
-                       <a href="" className="linkMenu">
+                       <Link to="/post" className="linkMenu">
 
 
                           <div className="icon">
@@ -74,7 +74,7 @@ export default function(){
                 
                
     
-                      </a>
+                      </Link>
                  </li>
 
                  

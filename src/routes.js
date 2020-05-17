@@ -3,6 +3,7 @@ import React, {lazy, Suspense} from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Loader from './assets/loader.svg'
 import { useState } from 'react'
+import { isLogged } from './services/auth'
 
 function loadingScreen(){
 
@@ -22,14 +23,17 @@ const Register= lazy(()=> import('./components/pages/auth/register/register'))
 
 
 export default function Routes(){
-/*
-  return (
+
+
+  if(isLogged()){
+    return (
       <BrowserRouter>
           <Switch>
             <Suspense fallback={ (loadingScreen())}>
 
               
               <Route path="/" exact component={Home}></Route>
+              <Route path="/post" exact component={Home}></Route>
               <Route path="/post/new" exact component={NewPost}></Route>
             </Suspense>
 
@@ -37,24 +41,23 @@ export default function Routes(){
               
               </Switch>
         </BrowserRouter>
-    )*/
-
-
+    )
+  } else {
     return(
       <BrowserRouter>
-      <Switch>
-        <Suspense fallback={ (loadingScreen())}>
-
-          
-          <Route path="/login" exact component={Login}></Route>
-          <Route path="/register" exact component={Register}></Route>
-       
-        </Suspense>
-
-          
-          
-          </Switch>
-    </BrowserRouter>
+        <Switch>
+          <Suspense fallback={ (loadingScreen())}>
+            <Route path="/" exact component={Login}></Route>
+            <Route path="/login" exact component={Login}></Route>
+            <Route path="/register" exact component={Register}></Route>
+          </Suspense>  
+        </Switch>
+       </BrowserRouter>
     )
 
+  }
+
+
+
+  
   }
