@@ -4,54 +4,100 @@ import HeaderPage from './../template/headerPage/headerPage'
 import {FaRegStickyNote} from 'react-icons/fa'
 import api from './../../services/api'
 
+import { success, defaultModules } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
+
+import "@pnotify/core/dist/BrightTheme.css";
+import '@pnotify/confirm/dist/PNotifyConfirm.css'
+
 
 import {useHistory} from 'react-router-dom'
 
 
 import './home.css'
+import { MdCreate, MdDelete, MdAddAlert, MdReport } from 'react-icons/md'
 
 
 export default function(){
 
   const [posts, setPosts] = useState([]);
   const history = useHistory();
+  const [idPostDelete, setIdPostDelete] = useState();
 
   function toNewPost(){
     history.push("/post/new")
   }
 
+  function showModal(idPost){
+        const el = document.getElementById('#modal');
+        el.style.visibility = "visible"
 
-useEffect(()=>{
-  
+        document.getElementById('btnYes').focus();
+
+        setIdPostDelete(idPost)
+  }
+
+
+
+  function deletePost(){
+      api.delete(`post/${idPostDelete}`).then((res)=>{
+        success('Deletado com sucesso')
+        cancel();
+        getPosts();
+      })
+  }
+
+
+  function cancel(){
+    const el = document.getElementById('#modal');
+    el.style.visibility = "hidden"
+  }
+
+  function getPosts(){
     api.get("posts").then((res)=>{
     
-       setPosts(res.data);
-    })
+      setPosts(res.data);
+   })
+  }
+
+
+  function goToPost(id){
+      history.push(`/post/update/${id}`)
+  }
+
+useEffect(()=>{
+    getPosts();
+   
 }, [])
-/**
- * 
- * 
- *   <div className="headerPage">
-            
-            <div className="titlePage">
-              <FaRegStickyNote enableBackground={false}></FaRegStickyNote>
-              <span>Públicações</span>
-            </div>
-
-            <div className="form">
-              <input type="text"/>
-              <button onClick={toNewPost}>Nova Públicação</button>
-            </div>
-
-        
-
-
-      </div>
-
- */
 
   return(
+
+
+
+
+
+
+
+
     <div className="">
+
+
+      <div id="#modal" className="modal">
+        aasdsa
+        <div className="modalContent">
+         <MdReport className="icon-modal"size={40} color={"red"}></MdReport>
+         <span>Tem certeza que deseja Excluir ? o registro não poderá ser recuperado.</span>
+
+          <div className="buttons-modal">
+            <button onClick={deletePost} id={'btnYes'} className="btn-yes">Sim</button>
+            <button  onClick={cancel} className="btn-not">Não</button>
+          </div>
+
+        </div>
+
+       
+      </div>
+ 
           <HeaderPage pageName={'Públicações'} icon={()=>{ return(<FaRegStickyNote enableBackground={false}></FaRegStickyNote>)}}contentHeader={()=>{
             return(
               <div className="form">
@@ -72,8 +118,13 @@ useEffect(()=>{
                   <td>{item.titulo}</td>
               
                   <td>
-                      <button className="btn-custom">Ver Públicação</button>
-                      <button className="btn-custom">Editar</button>
+                     
+                      <button onClick={()=>{goToPost(item.id)}} className="btn-table-icon">
+                        <MdCreate size={20}></MdCreate>
+                      </button>
+                      <button onClick={()=>{showModal(item.id)}} id="#delete" className="btn-table-icon">
+                        <MdDelete size={20}></MdDelete>
+                      </button>
                   </td>
                 </tr>
                 ))

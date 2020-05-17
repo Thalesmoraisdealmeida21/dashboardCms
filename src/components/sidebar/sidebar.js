@@ -60,7 +60,7 @@ export default function(){
                   <ul>
                     <li>
                      
-                       <Link to="/post" className="linkMenu">
+                       <Link to="/" className="linkMenu">
 
 
                           <div className="icon">
@@ -69,7 +69,7 @@ export default function(){
                      
                       
                       
-                        <label htmlFor="">Dashboard</label>
+                        <label>Dashboard</label>
 
                 
                

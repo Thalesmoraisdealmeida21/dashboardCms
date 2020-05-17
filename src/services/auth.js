@@ -1,4 +1,4 @@
-
+import api from './api'
 
 export function isLogged(){
         return localStorage.getItem('token') !== null
@@ -14,5 +14,14 @@ export function login(token){
 }
 
 export function logout(){
-  localStorage.removeItem('token')
+  api.post('logout').then((res)=>{
+    if(res.status === 200){
+      localStorage.removeItem('token');
+    }
+  })
+  
+
+
+
+
 }

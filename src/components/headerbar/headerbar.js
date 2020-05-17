@@ -21,8 +21,12 @@ export default function(){
 
   async function handleLogout(){
     logout();
-    history.push('login')
-    window.location.reload();
+    history.push("login");
+    setTimeout(3000);
+
+
+    window.location.reload(false)
+  
         
   }
   return(

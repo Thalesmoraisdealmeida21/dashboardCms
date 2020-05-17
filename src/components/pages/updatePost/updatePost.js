@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import {useParams} from 'react-router-dom'
 import HeaderPage from './../../template/headerPage/headerPage'
 import CKEditor from '@ckeditor/ckeditor5-react';
 import BalloonEditor from '@ckeditor/ckeditor5-build-inline'
 import { FaFile, FaArrowLeft}from 'react-icons/fa'
-import { success, defaultModules, error } from '@pnotify/core';
+import { success, defaultModules } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 
 import "@pnotify/core/dist/BrightTheme.css";
@@ -14,23 +15,33 @@ import '@pnotify/confirm/dist/PNotifyConfirm.css'
 import api from './../../../services/api'
 
 
-import "./newPost.css"
-import { Link, useHistory } from 'react-router-dom'
+import "./updatePost.css"
+import { Link } from 'react-router-dom'
 import { useState } from 'react';
 
 export default function(){
 
- 
+
+  const { id } = useParams(); 
 
   const [titulo, setTitulo] = useState('');
   const [resumo, setResumo] = useState('');
   const [descricao, setDescricao] = useState('');
 
+
+
   const [modeUpdate, setModeUpdate] = useState(false);
 
-  const history = useHistory()
 
+  function getDataPost(){
+        
+        api.get(`post/${id}`).then((ret)=>{
 
+            setTitulo(ret.data.titulo)
+            setResumo(ret.data.resumo)
+            setDescricao(ret.data.descricao)
+        })
+  }
   async function saveAndPublish(e){
         e.preventDefault();
 
@@ -42,31 +53,28 @@ export default function(){
 
 
 
-    
-          api.post('post', data).then((ret)=>{
-            if(ret.status === 201){
+        if(modeUpdate){
+
+        }else {
+          api.put(`/post/update/${id}`, data).then((ret)=>{
+            if(ret.status === 200){
               success('Gravou com sucesso !!!!')
-              history.push(`./update/${ret.data.id}`)
-             
+              setModeUpdate(true);
             }
         
-          }).catch((e)=>{
-                error("Você não está autenticado")
           })
-        
-
-    
-        
-
-
-
-
+        }
   }
+
+  useEffect(()=>{
+      getDataPost();
+
+  }, [])
 
   return(
     <div className="">
 
-        <HeaderPage pageName="Nova Públicação" icon={()=>{return(<div><Link style={{color: "white"}} to="/"><FaArrowLeft></FaArrowLeft></Link></div>)}} contentHeader={()=>{
+        <HeaderPage pageName="Editar Públicação" icon={()=>{return(<div><Link style={{color: "white"}} to="/"><FaArrowLeft></FaArrowLeft></Link></div>)}} contentHeader={()=>{
           return(<div> <button className="btn" onClick={saveAndPublish}>Salvar e Públicar</button></div>)
           }}>
         </HeaderPage>
@@ -95,7 +103,7 @@ export default function(){
                           const data = editor.getData();
                           setDescricao(data);
                       } }
-                        data={"Digite seu ártigo aqui !!"}
+                        data={descricao}
                         
                     />
             </div>

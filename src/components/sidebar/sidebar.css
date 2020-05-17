@@ -79,7 +79,7 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #8C8F95; 
-  visibility: hidden;
+  visibility: visible;
   border-radius: 10px;
   transition: 0.8;
 }
