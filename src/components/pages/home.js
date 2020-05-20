@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Table from './../template/table/table'
 import HeaderPage from './../template/headerPage/headerPage'
-import {FaRegStickyNote} from 'react-icons/fa'
+import {FaRegStickyNote, FaSearch} from 'react-icons/fa'
 import api from './../../services/api'
 
 import { success, defaultModules } from '@pnotify/core';
@@ -23,6 +23,7 @@ export default function(){
   const [posts, setPosts] = useState([]);
   const history = useHistory();
   const [idPostDelete, setIdPostDelete] = useState();
+  const [searchField, setSearchField ] = useState(''); 
 
   function toNewPost(){
     history.push("/post/new")
@@ -65,6 +66,16 @@ export default function(){
       history.push(`/post/update/${id}`)
   }
 
+
+  function search(text){
+    setSearchField(text)
+
+    api.get(`/post/search/title/${searchField}`).then((ret)=>{
+      setPosts(ret.data)
+    })
+    
+  }
+
 useEffect(()=>{
     getPosts();
    
@@ -101,7 +112,7 @@ useEffect(()=>{
           <HeaderPage pageName={'Públicações'} icon={()=>{ return(<FaRegStickyNote enableBackground={false}></FaRegStickyNote>)}}contentHeader={()=>{
             return(
               <div className="form">
-              <input type="text"/>
+              <input  onChange={(evt)=>{search(evt.target.value)}} type="text"/>
               <button onClick={toNewPost}>Nova Públicação</button>
             </div>
 

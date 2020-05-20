@@ -1,9 +1,11 @@
   
 import axios from 'axios'
 import { getToken } from './auth';
+import env from './../enviroment/environment-dev'
+
 
 const api = axios.create({
-    baseURL: 'http://192.168.0.103:3333'
+    baseURL: env.api
 })
 
 

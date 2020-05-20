@@ -9,6 +9,7 @@ import '@pnotify/core/dist/PNotify.css';
 import "@pnotify/core/dist/BrightTheme.css";
 import '@pnotify/confirm/dist/PNotifyConfirm.css'
 
+import env from './../../../enviroment/environment-dev'
 
 
 import api from './../../../services/api'
@@ -77,7 +78,7 @@ export default function(){
   formData.append('capa', imagemCapa);
 
         api.post('/upload', formData, config).then((ret)=>{
-                setImgCapa(`http://192.168.0.103:3333/${ret.data.pathImg}`)
+                setImgCapa(env.api + "/" + ret.data.pathImg)
         })
   } 
 
