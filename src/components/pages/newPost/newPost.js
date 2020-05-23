@@ -9,8 +9,6 @@ import '@pnotify/core/dist/PNotify.css';
 import "@pnotify/core/dist/BrightTheme.css";
 import '@pnotify/confirm/dist/PNotifyConfirm.css'
 
-import env from './../../../enviroment/environment-dev'
-
 
 import api from './../../../services/api'
 
@@ -27,7 +25,6 @@ export default function(){
   const [resumo, setResumo] = useState('');
   const [descricao, setDescricao] = useState('');
   const [imgCapa, setImgCapa] = useState();
-  const [modeUpdate, setModeUpdate] = useState(false);
 
 
   const history = useHistory()
@@ -78,7 +75,6 @@ export default function(){
   formData.append('capa', imagemCapa);
 
         api.post('/upload', formData, config).then((ret)=>{
-                setImgCapa(env.api + "/" + ret.data.pathImg)
         })
   } 
 

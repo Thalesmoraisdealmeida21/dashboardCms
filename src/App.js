@@ -1,16 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Headerbar from './components/headerbar/headerbar'
 
 
 import Sidebar from'./components/sidebar/sidebar'
 import Routes from './routes'
 import Auth from './components/pages/auth/layoutAuth/layoutAuth'
+import { useRouteMatch } from 'react-router-dom'
 
 import './App.css'
 import { isLogged } from './services/auth';
 import { BrowserRouter } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 function App() {
+
+
+  const [notFound, setNotFound] = useState(false)
+  
+
+
+  function getRouteNotFound(){
+          if(window.location.pathname === "/404"){
+            setNotFound(true);
+          }
+  }
+  
+
+  useEffect(()=>{
+      getRouteNotFound();
+
+  }, [])
 
 
   return(
@@ -34,10 +54,20 @@ function App() {
         {!isLogged() &&
                     <div className="auth">
           
- 
 
-                    <Auth></Auth>
+
+                    {!notFound &&
+                      
+                            <Auth></Auth>
+                 
+  
+                    } 
+
                     <Routes></Routes>
+
+               
+
+                   
       
                     
                 </div>

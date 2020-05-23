@@ -1,7 +1,6 @@
   
 import axios from 'axios'
 import { getToken } from './auth';
-import env from './../enviroment/environment-dev'
 
 
 const api = axios.create({

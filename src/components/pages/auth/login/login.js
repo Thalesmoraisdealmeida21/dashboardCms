@@ -78,7 +78,6 @@ export default function(){
 
                 <div className="buttons">
                     <button onClick={handleLogin} class="btn form-control">Login</button>
-                    <button onClick={goToRegister} class="btn form-control">Criar Conta</button>
                 </div>
               </form>
           

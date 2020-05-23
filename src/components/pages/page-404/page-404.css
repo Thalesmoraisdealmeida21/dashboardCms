@@ -1,0 +1,19 @@
+.containerNotFound{
+
+
+  background-color: #101E2B;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+}
+
+.msgNotFound{
+  text-align: center;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+.msgNotFound label{
+  font-size: 10rem;
+}
