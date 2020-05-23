@@ -13,7 +13,7 @@ import '@pnotify/confirm/dist/PNotifyConfirm.css'
 
 
 import api from './../../../services/api'
-import env from './../../../enviroment/environment-dev'
+
 
 
 import "./updatePost.css"
@@ -37,7 +37,7 @@ export default function(){
   formData.append('capa', imagemCapa);
   
         api.post('/upload', formData, config).then((ret)=>{
-          setImgCapa(env.api + "/" + ret.data.pathImg)
+          setImgCapa(process.env.REACT_APP_API_URL + "/" + ret.data.pathImg)
         })
   }
 
@@ -64,7 +64,6 @@ export default function(){
             setResumo(ret.data.resumo)
             setDescricao(ret.data.descricao)
             setImgCapa(ret.data.imgCapa)
-            console.log(ret.data.descricao)
             CKEditor.data = ret.data.descricao
         })
 
