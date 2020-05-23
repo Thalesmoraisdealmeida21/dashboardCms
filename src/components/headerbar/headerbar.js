@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {MdArrowDropDown} from 'react-icons/md'
 import {ùseHistory, useHistory} from 'react-router-dom'
 
 import './headerbar.css'
-import profile from './../../assets/perfil.jpg'
+import profile from './../../assets/perfil.png'
 import { logout } from '../../services/auth'
+import api from '../../services/api'
+
 
 export default function(){
 
   const [visibilityDropdown, setVisibilityDropdown] = useState('dropdown-content')
+  const [user, setUser] = useState({})
+
   const history = useHistory();
   function toogleDropdown(){
       if(visibilityDropdown === 'dropdown-content'){
@@ -19,13 +23,27 @@ export default function(){
 
   }
 
-   function handleLogout(){
-    logout().then((retAuth)=>{
-        history.push("login");
-        window.location.reload();
-    })
+
+
+
+    function getDataProfile(){
+          api.get(`/user/${localStorage.getItem('idUser')}`).then((userData)=>{
+                setUser(userData.data);
+                console.log(user)
+          })
+    }
+
+
+
+    useEffect(()=>{
+        getDataProfile();
+    }, [])
     
-    
+    function handleLogout(){
+      logout().then((retAuth)=>{
+          history.push("login");
+          window.location.reload();
+      })
 
 
  
@@ -50,7 +68,7 @@ export default function(){
 
               <div className="dropdown">
                   <button onClick={toogleDropdown} className="btn-dropdown link">
-                    Thales Morais
+                    {user.username}
                     <MdArrowDropDown></MdArrowDropDown>
                   </button> 
                     <div className={visibilityDropdown}>

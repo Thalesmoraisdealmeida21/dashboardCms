@@ -1,15 +1,29 @@
 import React, { useState }  from 'react'
-import profileImage from './../../assets/perfil.jpg'
+import profileImage from './../../assets/perfil.png'
 import {MdDashboard, MdAddShoppingCart, MdSchool, MdEmail, MdChat, MdNoteAdd, MdAccessibility, MdArrowDropDownCircle, MdKeyboardArrowLeft, MdKeyboardArrowRight} from 'react-icons/md'
-
+import api from './../../services/api'
 
 import './sidebar.css'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export default function(){
 
   const [menuCollpse, setMenuCollpase] = useState("sidebarContainer")
   const [sizeIcons, setSizeIcons] = useState(30)
+  const [user, setUser] = useState({})
+
+  function getDataProfile(){
+    api.get(`/user/${localStorage.getItem('idUser')}`).then((userData)=>{
+          setUser(userData.data);
+          
+    })
+}
+  
+useEffect(()=>{
+    getDataProfile();
+})
+  
   function collapseMenu(){
     if(menuCollpse === "sidebarContainer menuCollapsed"){
       setMenuCollpase("sidebarContainer");
@@ -44,7 +58,7 @@ export default function(){
           <div className="profileContent">
  
             <img src={profileImage} alt=""/>
-            <h4>Thales Morais</h4>
+            <h4>{user.username}</h4>
           </div>
           
         </div>

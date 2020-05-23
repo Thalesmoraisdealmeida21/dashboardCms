@@ -9,8 +9,9 @@ export function getToken(){
 
 }
 
-export function login(token){
+export function login(token, id){
   localStorage.setItem('token', token)
+  localStorage.setItem('idUser', id);
 }
 
 export async function  logout(){
