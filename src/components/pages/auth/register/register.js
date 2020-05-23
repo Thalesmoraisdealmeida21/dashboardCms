@@ -72,7 +72,6 @@ export default function(){
   
   
                   <div className="buttons">
-                      <button onClick={createAccount} class="btn form-control">Criar Conta</button>
                       <button onClick={goBackLogin}class="btn form-control">Voltar</button>
                   </div>
 
