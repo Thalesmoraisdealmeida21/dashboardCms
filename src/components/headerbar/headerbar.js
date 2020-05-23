@@ -19,13 +19,19 @@ export default function(){
 
   }
 
-  async function handleLogout(){
-    logout();
-    history.push("login");
-    setTimeout(3000);
+   function handleLogout(){
+    logout().then((retAuth)=>{
+        history.push("login");
+        window.location.reload();
+    })
+    
+    
 
 
-    window.location.reload(false)
+ 
+
+
+
   
         
   }
@@ -43,7 +49,7 @@ export default function(){
             <span>
 
               <div className="dropdown">
-                  <button onClick={toogleDropdown} class="btn-dropdown link">
+                  <button onClick={toogleDropdown} className="btn-dropdown link">
                     Thales Morais
                     <MdArrowDropDown></MdArrowDropDown>
                   </button> 

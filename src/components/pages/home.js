@@ -69,8 +69,12 @@ export default function(){
 
   function search(text){
     setSearchField(text)
+    const url = `/post/search/title/${searchField}`
 
-    api.get(`/post/search/title/${searchField}`).then((ret)=>{
+    if(text.lenght <= 0){
+      url = "/posts"
+    }
+    api.get(url).then((ret)=>{
       setPosts(ret.data)
     })
     

@@ -13,7 +13,7 @@ export default function(){
   function collapseMenu(){
     if(menuCollpse === "sidebarContainer menuCollapsed"){
       setMenuCollpase("sidebarContainer");
-      setSizeIcons(30)
+      setSizeIcons(25)
     } else {
       setMenuCollpase("sidebarContainer menuCollapsed");
       setSizeIcons(40)
@@ -60,7 +60,7 @@ export default function(){
                   <ul>
                     <li>
                      
-                       <Link to="/" className="linkMenu">
+                       <Link to="/post" className="linkMenu">
 
 
                           <div className="icon">
@@ -69,7 +69,7 @@ export default function(){
                      
                       
                       
-                        <label>Dashboard</label>
+                        <label>Públicações</label>
 
                 
                

@@ -15,6 +15,7 @@
 
 ::-webkit-scrollbar {
   width: 10px;
+  display: none;
   
 }
 
@@ -73,26 +74,26 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
- 
+  display: none;
   border-radius: 10px;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #8C8F95; 
-  visibility: visible;
+  display: none;
   border-radius: 10px;
   transition: 0.8;
 }
 
 .sidebarContainer:hover ::-webkit-scrollbar-thumb {
-  visibility: visible;
+  display: none;
 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  visibility: visible;
+  display: none;
 }
 
 .sidebarContainer .profileContainer{
@@ -176,7 +177,7 @@
   
   font-family: Helvetica;
   padding: 0;
-  margin-top: 2px;
+  margin-top: 7px;
   font-size: 23 px;
   transition: 1s;
   margin-left: 10px;

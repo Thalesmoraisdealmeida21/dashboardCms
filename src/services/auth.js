@@ -13,12 +13,18 @@ export function login(token){
   localStorage.setItem('token', token)
 }
 
-export function logout(){
-  api.post('logout').then((res)=>{
+export async function  logout(){
+
+ await api.post('logout').then((res)=>{
     if(res.status === 200){
       localStorage.removeItem('token');
+      
     }
   })
+
+  return true;
+
+ 
   
 
 

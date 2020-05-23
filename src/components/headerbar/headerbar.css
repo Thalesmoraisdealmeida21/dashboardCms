@@ -58,6 +58,8 @@
 .dropdown {
   float: left;
   overflow: hidden;
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .btn-dropdown:hover .dropdown-content {
@@ -82,15 +84,20 @@
 
 .profileImg{
   padding: 8px;
-  height: 30px;
-  width: 36px;
+  height: 6vh;
+  width: 3vw;
   margin-top: 5px;
   border-radius: 82px;
-  
 
 }
 
 .col-3 span{
   margin-top: auto;
   margin-bottom: auto;
+}
+
+@media (max-width: 1500px){
+  .dropdown{
+    font-size: 2.4em;
+  }
 }

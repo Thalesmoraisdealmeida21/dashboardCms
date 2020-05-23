@@ -32,7 +32,7 @@ export default function Routes(){
           <Switch>
             <Suspense fallback={ (loadingScreen())}>
 
-              
+            <Route path="*" exact component={Home}></Route>
               <Route path="/" exact component={Home}></Route>
               <Route path="/post" exact component={Home}></Route>
               <Route path="/post/new" exact component={NewPost}></Route>
@@ -50,6 +50,8 @@ export default function Routes(){
       <BrowserRouter>
         <Switch>
           <Suspense fallback={ (loadingScreen())}>
+            
+            <Route path="*" exact component={Login}></Route>
             <Route path="/" exact component={Login}></Route>
             <Route path="/login" exact component={Login}></Route>
             <Route path="/register" exact component={Register}></Route>
