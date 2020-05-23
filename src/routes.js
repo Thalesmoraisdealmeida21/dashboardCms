@@ -20,7 +20,7 @@ const Home = lazy(() => import('./components/pages/home'))
 const NewPost = lazy(() => import('./../src/components/pages/newPost/newPost'));
 const UpdatePost = lazy(()=> import('./../src/components/pages/updatePost/updatePost'))
 const Login = lazy(() => import('./components/pages/auth/login/login'))
-const Register= lazy(()=> import('./components/pages/auth/register/register'))
+//const Register= lazy(()=> import('./components/pages/auth/register/register'))
 const NotFound = lazy(()=> import('./components/pages/page-404/page-404'))
 
 
@@ -55,7 +55,10 @@ export default function Routes(){
           <Suspense fallback={ (loadingScreen())}>
       
             <Route exact path="/login" component={Login}></Route>
-          
+            <Route exact path="*">
+              <Redirect to="/login"></Redirect>
+            </Route>
+
 
             
 
