@@ -20,9 +20,7 @@ export default function(){
     })
 }
   
-useEffect(()=>{
-    getDataProfile();
-})
+
   
   function collapseMenu(){
     if(menuCollpse === "sidebarContainer menuCollapsed"){

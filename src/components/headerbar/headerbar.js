@@ -26,18 +26,6 @@ export default function(){
 
 
 
-    function getDataProfile(){
-          api.get(`/user/${localStorage.getItem('idUser')}`).then((userData)=>{
-                setUser(userData.data);
-                console.log(user)
-          })
-    }
-
-
-
-    useEffect(()=>{
-        getDataProfile();
-    }, [])
     
     function handleLogout(){
       logout().then((retAuth)=>{

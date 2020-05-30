@@ -10,11 +10,14 @@ const api = axios.create({
 
 api.interceptors.request.use(async config=>{
     const token = getToken();
-    console.log("token" + token)
+    const tenant = localStorage.getItem("idUser");
+   
 
     if(token){
         config.headers.authorization = token
+        config.headers.tenant = tenant
     }
+    
     return config
 })
 

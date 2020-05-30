@@ -37,7 +37,10 @@ export default function(){
               if(ret.status === 200){
 
                 let token = ret.data.token;
+                console.log(ret.data.userTenant)
                 login(token, ret.data.idUser);
+                
+           
                 history.push('post');
                 success('Logado com sucesso, você será redirencionado !!!')
                 window.location.reload();
