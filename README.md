@@ -1,6 +1,6 @@
 <h1 align="center">
     <img alt="" src="./web/src/assets/logo.svg">
-      
+      Dashboard CMS
 </h1>
 
 
