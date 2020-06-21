@@ -4,7 +4,7 @@ import { getToken } from './auth';
 
 
 const api = axios.create({
-    baseURL: "http://thalesmoras.kinghost.net:21104"
+    baseURL: process.env.REACT_APP_API_URL
 })
 
 
