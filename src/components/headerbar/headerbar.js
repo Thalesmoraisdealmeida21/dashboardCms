@@ -68,7 +68,7 @@ export default function(){
 
               <div className="dropdown">
                   <button onClick={toogleDropdown} className="btn-dropdown link">
-                    {user.username}
+                    Thales Morais
                     <MdArrowDropDown></MdArrowDropDown>
                   </button> 
                     <div className={visibilityDropdown}>

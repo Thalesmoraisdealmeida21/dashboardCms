@@ -15,7 +15,7 @@ import api from './../../../services/api'
 import "./newPost.css"
 import { Link, useHistory } from 'react-router-dom'
 import { useState } from 'react';
-import { useEffect } from 'react';
+
 
 
 
@@ -75,7 +75,8 @@ export default function(){
   formData.append('capa', imagemCapa);
 
         api.post('/upload', formData, config).then((ret)=>{
-        })
+        setImgCapa(process.env.REACT_APP_API_URL + "/" + ret.data.pathImg)
+  })
   } 
 
 
