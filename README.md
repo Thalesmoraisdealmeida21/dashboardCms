@@ -1,68 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+    <img alt="" src="./web/src/assets/logo.svg">
+      
+</h1>
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+<p align="center">Esteé um dashboard público utilizado para cadastro de públicações afim de ser utilizado em sites no formato blog, ele contempla um template básico assim com menus para inclusão, edição, excclusão de públicações
+</p>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<p align="center">
+  <a href="https://github.com/Thalesmoraisdealmeida21">
+    <img alt="Made by Thales Morais" src="https://img.shields.io/badge/Feito%20por-Thales%20Morais-brightgreen">
+  </a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  <img alt="Last Commit" src="https://img.shields.io/github/last-commit/Thalesmoraisdealmeida21/dashboardCms">
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+</p>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Sumario
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<ul>
+  <li><a href="#-ponto-de-partida">Ponto de Partida</a></li>
+  <li><a href="#-funcionalidades-do-aplicativo">Funcionaldiades do Aplicativo</a></li>
+  <li><a href="#-funcionalidades-do-aplicativo">Tecnologias</a></li>
+  <li><a href="#Screenshots">Screenshots</a></li>
+</ul>
 
-### Code Splitting
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## 🚀 Ponto de Partida
+Caso queira rodar este projeto em sua maquina, instale o node e o react após basta executar o comando `npm install` para instalar todas as dependências do projeto e posteriormente executar o comando `npm start`
 
-### Making a Progressive Web App
+Se quiser executar e testar as funcionalidades da aplicações, baixe o projeto da API no link <a href="https://github.com/Thalesmoraisdealmeida21/cms_api">https://github.com/Thalesmoraisdealmeida21/cms_api<a/> e execute ele em seu computado, seguindo os passos contido no mesmo. 
+  
+Após configurado a API abra o projeto do dashboard e crie um arquivo .env com a diretriz `REACT_APP_API_URL=ENDEREÇO DA API` lembrando de substituir para o endereço a onde está rodando a API 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
+## 📋 Funcionalidades do Aplicativo
+Estas são as funcionalidades da aplicação em cada um dos ambientes (Web, Mobile)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+ - [x] Criação de Públicações
+ - [x] Exclusão de Públicação
+ - [x] Edição da Públicação
+ - [x] Upload de imagem
+ - [x] Autenticação JWT
+ 
+
+
+
+
+
+### Tecnologias
+Fo utilizado para a criação deste projeto o framework react e todas as interfaces foram inteiramente constrúidas com CSS e HTML
+
+
+
+
+
+---
+## Screenshots
+---
