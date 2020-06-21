@@ -82,6 +82,7 @@ Fo utilizado para a criação deste projeto o framework react e todas as interfa
 <img width="100%" src="screenshots/login.png">
 
 <div display="flex" flex-direction="row">
+    <img src="screenshots/demo.gif" >
     <img width="100%" src="screenshots/criacao.png">
     <img width="100%" src="screenshots/listagem.png">
 </div>
